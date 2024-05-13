@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import MobileHeader from './MobileHeader';
 
 
 
@@ -11,84 +12,79 @@ import { useState } from 'react';
 const NavbarMenuData = [
   {
     title: 'Academic',
-    href: '#',
+    href: '/academic',
     sublinks: [
       {
         title: 'Courses',
-        href: '#',
+        href: '/academic/courses',
       },
       {
         title: 'Teachers',
-        href: '#',
+        href: '/academic/teachers',
       },
       {
         title: 'Students',
-        href: '#',
+        href: '/academic/students',
       },
       {
         title: 'Results',
-        href: '#',
+        href: '/academic/results',
       },
     ]
   },
   {
     title: 'Notice',
-    href: '#',
+    href: '/notice',
     sublinks: [
       {
         title: 'Notice',
-        href: '#',
+        href: '/notice',
       },
       {
         title: 'Events',
-        href: '#',
+        href: '/notice/events',
       },
     ]
   },
   {
-    title: 'Result',
-    href: '#',
-    
-  },
-  {
     title: 'Admission',
-    href: '#',
+    href: '/admission',
     sublinks: [
       {
         title: 'Admission',
-        href: '#',
+        href: '/admission',
       },
       {
         title: 'Apply Now',
-        href: '#',
+        href: '/admission/apply',
       },
     ]
   },
   {
     title: 'Information',
-    href: '#',
+    href: '/information',
     sublinks: [
       {
         title: 'About',
-        href: '#',
+        href: '/information/about',
       },
       {
         title: 'Contact',
-        href: '#',
+        href: '/information/contact',
       },
     ]
   },
   {
     title: 'Login',
-    href: '#',
+    href: '/login',
     sublinks: [
       {
         title: 'Login',
-        href: '#',
+        href: '/login',
       },
       {
         title: 'Register',
-        href: '#',
+        href: '/register',
       },
     ]
   }
@@ -108,7 +104,7 @@ const Navbar = () => {
   return (
     <div>
         <div>
-        <nav className=":bg-gray-800">
+        <nav className=" bg-white top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -121,8 +117,9 @@ const Navbar = () => {
            <Link href="/">
            <h1 className='text-3xl font-bold'>KKMDM</h1>
            </Link>
-            <div className="hidden md:block">
+            <div className="space-x-4 hidden md:block ">
               <div className="ml-10 flex items-baseline space-x-4 uppercase font-bold">
+
                 {NavbarMenuData.map((item, index) => (
                   <div key={index} className="relative">
                     <Link
@@ -155,8 +152,11 @@ const Navbar = () => {
                   </div>
                 ))}
               </div>
+           
             </div>
+       
           </div>
+         <MobileHeader />
         </div>
       </div>
     </nav>
