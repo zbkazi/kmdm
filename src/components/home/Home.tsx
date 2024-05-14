@@ -6,6 +6,7 @@ import CoronaTracerBD from './CoronaTracerBD'
 import BdNationalAnthem from './BdNationalAnthem'
 import Notices from '../notice/Notices'
 import TopNews from '../notice/pa/TopNews'
+import Events from '../notice/events/Events'
 
 const Home = () => {
   return (
@@ -18,6 +19,9 @@ const Home = () => {
                <TopNews />
                <div>
                 <Notices />
+               </div>
+               <div>
+                <Events />
                </div>
             </div>
             <div className="col-span-4 sm:col-span-3">
