@@ -1,12 +1,13 @@
 // src/app/page.tsx
+import Home from '@/components/home/Home'
 import React from 'react'
 
-const Home = () => {
+const HomePage = () => {
   return (
-    <div className='container m-auto shadow rounded h-screen bg-gray-100 flex justify-center items-center'>
-     
+    <div className=''>
+     <Home />
     </div>
   )
 }
 
-export default Home
+export default HomePage

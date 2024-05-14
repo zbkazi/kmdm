@@ -1,8 +1,11 @@
+import RegisterUserFrom from '@/components/auth/register/RegisterUserFrom'
 import React from 'react'
 
 const RegisterPage = () => {
   return (
-    <div>RegisterPage</div>
+    <div>
+      <RegisterUserFrom />
+    </div>
   )
 }
 
