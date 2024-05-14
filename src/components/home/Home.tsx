@@ -3,7 +3,9 @@ import EmergencyHotline from './EmergencyHotline'
 import Dengue from './Dengue'
 import Mujib from './Mujib'
 import CoronaTracerBD from './CoronaTracerBD'
-import NationalSongMp3 from './NationalSongMp3'
+import BdNationalAnthem from './BdNationalAnthem'
+import Notices from '../notice/Notices'
+import TopNews from '../notice/pa/TopNews'
 
 const Home = () => {
   return (
@@ -13,8 +15,10 @@ const Home = () => {
         <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
            
             <div className="col-span-4 sm:col-span-9">
-               
-                <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore impedit nostrum repudiandae aperiam vel tenetur accusantium ducimus libero magni, assumenda laborum sunt sint corporis facilis. Pariatur quia cumque itaque!</h1>
+               <TopNews />
+               <div>
+                <Notices />
+               </div>
             </div>
             <div className="col-span-4 sm:col-span-3">
                 <div className="bg-white shadow rounded-lg p-6">
@@ -27,22 +31,32 @@ const Home = () => {
                         
                     </div>
                     <hr className="my-6 border-t border-gray-300" />
-                    <div className="flex flex-col">
-                        <EmergencyHotline />
-                    </div>
-                    <div className="flex flex-col">
-                        <Dengue />
-                    </div>
+                    
                     <div className="flex flex-col">
                         <Mujib />
                     </div>
+                    <hr className="my-6 border-t-8 h-2 border-gray-300" />
+                    
+                    
+                        <Dengue />
+                    </div>
+                    <hr className="my-6 border-t-8 h-2 border-gray-300" />
+                    
                     <div className="flex flex-col">
                         <CoronaTracerBD />
                     </div>
+                    <hr className="my-6 border-t-8 h-2 border-gray-300" />
+                    <EmergencyHotline />
+                 
+                  <div className="flex flex-col">
+                    <hr className="my-6 border-t-8 h-2 border-gray-300" />
                     <div className='flex flex-col'>
-                    <NationalSongMp3 />
+                    <BdNationalAnthem />
                     </div>
+                    
                 </div>
+                
+                
             </div>
         </div>
         

@@ -2,7 +2,10 @@ import React from 'react'
 
 const Notices = () => {
   return (
-    <div>Notices</div>
+    <div>
+    <h1>Notices</h1>
+      
+    </div>
   )
 }
 
