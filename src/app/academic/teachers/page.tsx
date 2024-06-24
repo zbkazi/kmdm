@@ -1,9 +1,12 @@
-import React from 'react'
+import Teachers from "@/components/academic/teachers/Teachers";
+import React from "react";
 
 const teachersPage = () => {
   return (
-    <div>teachersPage</div>
-  )
-}
+    <div>
+      <Teachers />
+    </div>
+  );
+};
 
-export default teachersPage
+export default teachersPage;
