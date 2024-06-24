@@ -7,6 +7,7 @@ import BdNationalAnthem from "./BdNationalAnthem";
 import Notices from "../notice/Notices";
 import TopNews from "../notice/pa/TopNews";
 import Events from "../notice/events/Events";
+import About from "../information/about/About";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
           <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
             <div className="col-span-4 sm:col-span-9">
               <TopNews />
+              <About />
               <div>
                 <Notices />
               </div>
@@ -28,34 +30,34 @@ const Home = () => {
                 <div className="flex flex-col items-center">
                   <picture>
                     <img
-                      src="/src/assets/teachers/kmdm-super.jpg"
-                      className="   rounded-lg mb-4 shrink-0"
+                      src="https://github.com/zbkazi/kmdm/blob/main/src/assets/teachers/kmdm-super.jpg?raw=true"
+                      className="   rounded-lg mb-4 shrink-0 w-36 h-36 border-2 border-lime-400 shadow-lg"
                       alt="kmdm-the teacher"
                     ></img>
                   </picture>
 
-                  <h1 className="text-xl font-bold">Dr. John Doe</h1>
-                  <p className="text-gray-700">Head of the Department</p>
+                  <h1 className="text-xl font-bold">The Super</h1>
+                  <p className="">Head of the Department</p>
                 </div>
-                <hr className="my-6 border-t border-gray-300" />
+                <hr className="my-6 border-t-8 h-2 border-lime-400" />
 
                 <div className="flex flex-col">
                   <Mujib />
                 </div>
-                <hr className="my-6 border-t-8 h-2 border-gray-300" />
+                <hr className="my-6 border-t-8 h-2 border-lime-300" />
 
                 <Dengue />
               </div>
-              <hr className="my-6 border-t-8 h-2 border-gray-300" />
+              <hr className="my-6 border-t-8 h-2 border-lime-300" />
 
               <div className="flex flex-col">
                 <CoronaTracerBD />
               </div>
-              <hr className="my-6 border-t-8 h-2 border-gray-300" />
+              <hr className="my-6 border-t-8 h-2 border-lime-300" />
               <EmergencyHotline />
 
               <div className="flex flex-col">
-                <hr className="my-6 border-t-8 h-2 border-gray-300" />
+                <hr className="my-6 border-t-8 h-2 border-lime-300" />
                 <div className="flex flex-col">
                   <BdNationalAnthem />
                 </div>
