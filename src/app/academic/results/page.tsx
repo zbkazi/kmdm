@@ -1,9 +1,12 @@
-import React from 'react'
+import Results from "@/components/academic/results/Results";
+import React from "react";
 
 const resultsPage = () => {
   return (
-    <div>resultsPage</div>
-  )
-}
+    <div>
+      <Results />
+    </div>
+  );
+};
 
-export default resultsPage
+export default resultsPage;

@@ -1,9 +1,12 @@
-import React from 'react'
+import PeriodicTable from "@/components/academic/courses/PeriodicTable";
+import React from "react";
 
 const academicPage = () => {
   return (
-    <div>academicPage</div>
-  )
-}
+    <div>
+      <PeriodicTable />
+    </div>
+  );
+};
 
-export default academicPage
+export default academicPage;

@@ -1,9 +1,12 @@
-import React from 'react'
+import Courses from "@/components/academic/courses/Courses";
+import React from "react";
 
-const pages = () => {
+const CoursesPage = () => {
   return (
-    <div>pages</div>
-  )
-}
+    <div>
+      <Courses />
+    </div>
+  );
+};
 
-export default pages
+export default CoursesPage;
