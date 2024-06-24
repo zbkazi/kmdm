@@ -27,7 +27,11 @@ const Footer: React.FC = () => {
       <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span className="text-sm  sm:text-center">
           © {currentYear}{" "}
-          <a href="https://flowbite.com/" className="hover:underline">
+          <a
+            href="https://zobkazi.github.io/"
+            target="_blank"
+            className="hover:underline"
+          >
             kazibyte™
           </a>
           . All Rights Reserved.

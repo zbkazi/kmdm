@@ -8,11 +8,13 @@ import {
   MapPinIcon,
   BuildingLibraryIcon,
 } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const contactData = [
   {
     icon: PhoneArrowUpRightIcon,
     text: "01747837138",
+    href: "tel:01747837138",
   },
   {
     icon: PhoneIcon,
@@ -20,26 +22,31 @@ const contactData = [
   },
   {
     icon: GlobeAltIcon,
-    text: "www.kmdm.com",
+    text: "kmdm",
+    href: "https://zbkazi.github.io/kmdm/",
   },
   {
     icon: EnvelopeIcon,
     text: "kmdm122690@gmail.com",
+    email: true,
+    href: "mailto:kmdm122690@gmail",
   },
   {
     icon: MapPinIcon,
     text: "Ulipur, Kurigram Upazila Ulipur, District Kurigram",
+    href: "https://www.google.com/maps/place/Ulipur,+Kurigram+Upazila,+District+Kurigram,+Rangpur+Division,+Bangladesh",
   },
   {
     icon: BuildingLibraryIcon,
     text: "Division, Rangpur, Bangladesh",
+    href: "https://www.google.com/maps/place/Ulipur,+Kurigram+Upazila,+District+Kurigram,+Rangpur+Division,+Bangladesh",
   },
 ];
 
 const Contacts: React.FC = () => {
   return (
     <div>
-      <section>
+      <section className="rounded-lg shadow-md border-2 border-spacing-2 dark:border-gray-700 m-4 ">
         <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
             <GoogleMap />
@@ -48,7 +55,7 @@ const Contacts: React.FC = () => {
                 {contactData.map((item, index) => (
                   <p key={index} className="flex items-center mb-2">
                     <item.icon className="w-6 h-6 inline-block mr-2" />
-                    {item.text}
+                    <Link href={item.href ? item.href : "#"}>{item.text}</Link>
                   </p>
                 ))}
               </div>

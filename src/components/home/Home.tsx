@@ -8,6 +8,7 @@ import Notices from "../notice/Notices";
 import TopNews from "../notice/pa/TopNews";
 import Events from "../notice/events/Events";
 import About from "../information/about/About";
+import Contacts from "../information/contact/Contacts";
 
 const Home = () => {
   return (
@@ -66,6 +67,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Contacts />
     </div>
   );
 };
