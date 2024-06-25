@@ -1,15 +1,15 @@
-'use client';
-import React, { useState } from 'react';
-import axios from 'axios';
-import SocialMediaAccounts from '../register/SocialMediaAccounts';
+"use client";
+import React, { useState } from "react";
+import axios from "axios";
+import SocialMediaAccounts from "../register/SocialMediaAccounts";
 
 const Login: React.FC = () => {
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
   const [errors, setErrors] = useState<string[]>([]);
-  const [responseMessage, setResponseMessage] = useState('');
+  const [responseMessage, setResponseMessage] = useState("");
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,10 +25,10 @@ const Login: React.FC = () => {
     // Client-side validation
     const errors: string[] = [];
     if (!formData.email.trim()) {
-      errors.push('Email is required');
+      errors.push("Email is required");
     }
     if (!formData.password.trim()) {
-      errors.push('Password is required');
+      errors.push("Password is required");
     }
 
     if (errors.length > 0) {
@@ -38,10 +38,10 @@ const Login: React.FC = () => {
 
     try {
       // Post data to API
-      const response = await axios.post('/api/login', formData);
+      const response = await axios.post("/api/auth/login", formData);
       setResponseMessage(response.data.message);
     } catch (error) {
-      setResponseMessage('Error: Unable to login');
+      setResponseMessage("Error: Unable to login");
     }
   };
 
@@ -53,7 +53,9 @@ const Login: React.FC = () => {
     <div className="contain py-16">
       <div className="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden">
         <h2 className="text-2xl uppercase font-medium mb-1">Login</h2>
-        <p className="text-gray-600 mb-6 text-sm">Welcome! So good to have you back!</p>
+        <p className="text-gray-600 mb-6 text-sm">
+          Welcome! So good to have you back!
+        </p>
         <form autoComplete="off" onSubmit={handleSubmit}>
           {errors.length > 0 && (
             <div className="text-red-500">
@@ -86,7 +88,7 @@ const Login: React.FC = () => {
               </label>
               <div className="relative">
                 <input
-                  type={isPasswordVisible ? 'text' : 'password'}
+                  type={isPasswordVisible ? "text" : "password"}
                   name="password"
                   id="password"
                   className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-teal-500 placeholder-gray-400"
@@ -111,7 +113,11 @@ const Login: React.FC = () => {
                       stroke-linejoin="round"
                       d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
                     ></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
                   </svg>
                 </div>
               </div>
