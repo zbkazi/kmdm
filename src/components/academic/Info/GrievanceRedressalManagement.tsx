@@ -76,7 +76,7 @@ const GrievanceRedressalManagement: React.FC = () => {
             {/* Replace with your image */}
             <Image
               className="rounded-full"
-              src=""
+              src="https://github.com/zbkazi/kmdm/blob/main/src/assets/logos/Admission&Ellipse.png?raw=true"
               alt="Profile"
               width={80}
               height={80}
@@ -92,7 +92,6 @@ const GrievanceRedressalManagement: React.FC = () => {
                   <ListItem
                     key={item.id}
                     title={item.title}
-                    
                     href={item.href}
                     icon={item.icon}
                   />

@@ -8,25 +8,28 @@ const AcademicInfoData = [
   {
     id: 1,
     title: "শিক্ষার্থীদের প্রশংসা পত্র",
-    count: "+99",
     href: "/admission",
     icon: CheckBadgeIcon,
   },
   {
     id: 2,
     title: "একাডেমিক ক্যালেন্ডার",
-    count: "+23",
     href: "/notice",
     icon: CheckBadgeIcon,
   },
   {
     id: 3,
     title: "রুটিন",
-    count: "+12",
     href: "/notice/routines",
     icon: CheckBadgeIcon,
   },
 ];
+
+const AcademicInfoTitle = {
+  title: "শিক্ষার্থীদের প্রশংসা পত্র",
+}
+
+// Helper function to map data to the component
 
 interface ListItemProps {
   title: string;
@@ -60,7 +63,7 @@ const ListItem: React.FC<ListItemProps> = ({
 
 const AcademicInfo: React.FC = () => {
   return (
-    <section className="mb-2 border bg-neutral-100 p-4 rounded-lg max-w-full">
+    <section className="mb-2 border font-sans p-4 rounded-lg max-w-full">
       <div className="mx-auto">
         <div className="card md:flex max-w-xs mx-auto">
           <div className="w-20 h-20 mx-auto mb-6 md:mr-6 flex-shrink-0">
@@ -74,14 +77,15 @@ const AcademicInfo: React.FC = () => {
             />
           </div>
           <div className="flex-grow text-center md:text-left">
-            <h3 className="text-xl font-bold mb-2">Academic Information</h3>
+            <h3 className="text-xl font-bold mb-2">
+              {AcademicInfoTitle.title}
+            </h3>
             <div className="relative flex flex-col overflow-hidden bg-clip-border">
               <nav className="my-2 flex flex-col gap-1">
                 {AcademicInfoData.map((item) => (
                   <ListItem
                     key={item.id}
                     title={item.title}
-                    count={item.count}
                     href={item.href}
                     icon={item.icon}
                   />
