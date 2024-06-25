@@ -9,6 +9,7 @@ import TopNews from "../notice/pa/TopNews";
 import Events from "../notice/events/Events";
 import About from "../information/about/About";
 import Contacts from "../information/contact/Contacts";
+import InformationLayout from "./InformationLayout";
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
               <div>
                 <Events />
               </div>
+              <InformationLayout />
             </div>
             <div className="col-span-4 sm:col-span-3">
               <div className=" shadow rounded-lg p-6">
