@@ -4,6 +4,9 @@ interface IUser extends Document {
   username: string;
   email: string;
   password: string;
+  role: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 const UserSchema: Schema = new Schema(
@@ -22,7 +25,13 @@ const UserSchema: Schema = new Schema(
       type: String,
       required: true,
     },
+    role: {
+      enum: ["admin", "teacher", "student", "parent", "user"],
+      type: String,
+      default: "user",
+    },
   },
+
   { timestamps: true }
 );
 
