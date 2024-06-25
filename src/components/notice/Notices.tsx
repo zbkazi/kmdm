@@ -47,6 +47,8 @@ const Notices = () => {
             <div className=" p-4 rounded shadow">
               <h2 className="text-lg font-bold">{selectedNotice.title}</h2>
               <p>{selectedNotice.body}</p>
+              <p className="text-right">Posted on {selectedNotice.id}</p>
+             
             </div>
           </div>
         ) : (
@@ -60,7 +62,9 @@ const Notices = () => {
                   onClick={() => handleNoticeClick(notice)}
                 >
                   <h2 className="text-lg hover:underline hover:uppercase font-light">
-                    {notice.title}
+                    {notice.title} dated {notice.id}
+                    <br />
+                    <br />
                   </h2>
                 </div>
               ))}

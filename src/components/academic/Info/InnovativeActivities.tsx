@@ -66,7 +66,7 @@ const ListItem: React.FC<ListItemProps> = ({
 
 const InnovativeActivities: React.FC = () => {
   return (
-    <section className="mb-2 border p-4 rounded-lg max-w-full">
+    <section className="mb-2 border font-sans p-4 rounded-lg max-w-full">
       <div className="mx-auto">
         <div className="card md:flex max-w-xs mx-auto">
           <div className="flex-grow text-center md:text-left">
