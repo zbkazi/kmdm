@@ -6,16 +6,6 @@
 
 https://kmdm.vercel.app/
 
-EIIN : 122690
-Institute Level Dakhil
-Address Ulipur, Kurigram
-Upazila Ulipur
-District Kurigram
-Division Rangpur
-Management Private
-MPO Yes
-Study Type Co-Education Joint
-Email kmdm122690@gmail.com
-Phone 01747837138
-Official Phone 01309122690
-Website Updating Soon
+**Project Description:**
+
+"kashir-khamar-mofizia-dakhil-madrash (KMDM) is a comprehensive school management system built with Node.js and TypeScript, utilizing Next.js for frontend development and Tailwind CSS for sleek, responsive UI design. This full-stack software solution integrates robust backend functionalities with intuitive frontend interfaces, offering administrators, teachers, students, and parents seamless access to academic and administrative tools. KMDM is designed for efficiency and scalability, supporting tasks from attendance tracking and grading to resource management and communication, ensuring streamlined operations and enhanced educational outcomes."
