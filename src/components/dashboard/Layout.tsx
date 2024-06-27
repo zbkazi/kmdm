@@ -1,24 +1,14 @@
-import React, { ReactNode } from "react";
-import Sidebar from "./Sidebar/Sidebar";
-import Footer from "./Footer";
-import { ApplicationContextProvider } from "@/context/ApplicationContext";
+'use client'
+import React from 'react'
+import Sidebar from './Sidebar/Sidebar'
 
-interface LayoutProps {
-  children: ReactNode;
+const Layout = () => {
+  return (
+    <div>
+      <Sidebar className="w-64" toggle={Layout} />
+      
+    </div>
+  )
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return (
-    <ApplicationContextProvider>
-      <div className="flex min-h-screen font-Poppins">
-        <Sidebar />
-        <div className="flex flex-1 flex-col bg-slate-100">
-          {children}
-          <Footer />
-        </div>
-      </div>
-    </ApplicationContextProvider>
-  );
-};
-
-export default Layout;
+export default Layout

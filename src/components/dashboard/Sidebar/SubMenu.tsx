@@ -1,17 +1,32 @@
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// components/SubMenu.tsx
+"use client";
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { NavLink, useLocation } from "react-router-dom";
+import Link from "next/link"; // Assuming you are using Next.js for routing
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-function SubMenu({ menu, ...props }) {
-  const { pathname } = useLocation();
-  const [subMenuOpen, setSubMenuOpen] = useState(pathname.includes(menu.path));
+export type MenuItem = {
+  label: string;
+  path?: string;
+  icon?: any; // Update the type of icon if necessary
+  submenu?: MenuItem[] | null | undefined;
+  role?: string;
+};
+
+
+type SubMenuProps = {
+  menu: MenuItem;
+};
+
+const SubMenu: React.FC<SubMenuProps> = ({ menu }) => {
+  const [subMenuOpen, setSubMenuOpen] = useState(false);
+
   return (
     <div className={``} key={menu.label}>
       <li
         key={menu.label}
-        className={`link ${pathname.includes(menu.path) ? "active" : ""} `}
+        className={`link ${subMenuOpen ? "active" : ""} `}
         onClick={() => setSubMenuOpen(!subMenuOpen)}
       >
         {menu.icon && <FontAwesomeIcon icon={menu.icon} />}
@@ -33,16 +48,16 @@ function SubMenu({ menu, ...props }) {
         }
         className="flex flex-col pl-[39px] text-[0.7rem] h-0 overflow-hidden"
       >
-        {menu.submenu.map((sm) => (
-          <li key={sm.label} onClick={props.props.toggle}>
-            <NavLink to={`${menu.path}/${sm.path}`} className="link">
+        {menu.submenu?.map((sm) => (
+          <li key={sm.label}>
+            <Link href={`${menu.path}/${sm.path}`} className="link">
               {sm.label}
-            </NavLink>
+            </Link>
           </li>
         ))}
       </motion.ul>
     </div>
   );
-}
+};
 
 export default SubMenu;

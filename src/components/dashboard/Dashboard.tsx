@@ -1,23 +1,14 @@
-import Layout from '@/app/layout'
 import React from 'react'
+import Layout from './Layout'
 
-
-
-interface DashboardProps {
-  title: string;
-}
-
-
-const Dashboard: React.FC<DashboardProps> = ({ title }) => {
+const Dashboard = () => {
   return (
-    <Layout>
-      <div>
-        <h1>{title}</h1>
-        {/* Other content can go here */}
-      </div>
-    </Layout>
-  );
-};
+    <div>
+      <h1>Dashboard</h1>
 
+      <Layout />
+    </div>
+  )
+}
 
 export default Dashboard

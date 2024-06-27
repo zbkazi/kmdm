@@ -1,6 +1,17 @@
 import React from "react";
 
-function ScrolledCard({ data, ...props }) {
+interface ScrolledCardProps {
+  data: {
+    color: string;
+    title: string;
+    date: string;
+    os: number;
+    gs: number;
+    percentage: number;
+  };
+}
+
+const ScrolledCard: React.FC<ScrolledCardProps> = ({ data }) => {
   return (
     <div className={`scrolledCard ${data.color} text-slate-50 flex flex-col`}>
       <h1 className="pb-3 font-semibold">{data.title}</h1>
@@ -16,6 +27,6 @@ function ScrolledCard({ data, ...props }) {
       </div>
     </div>
   );
-}
+};
 
 export default ScrolledCard;
