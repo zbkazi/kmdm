@@ -2,8 +2,8 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Next.js App",
-    short_name: "Next.js App",
+    name: "kmdm || School",
+    short_name: "KMDM",
     description: "Next.js App",
     start_url: "/",
     display: "standalone",

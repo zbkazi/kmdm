@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./dash.css";
 import { ThemeProvider } from "../components/themes/ThemeProvider";
 import Navbar from "@/components/headers/Header";
 import Footer from "@/components/footer/Footer";
 import { keywords, seoData } from "@/config/SEO";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +36,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
+          <ToastContainer />
           {children}
           <Footer />
         </ThemeProvider>
