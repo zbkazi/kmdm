@@ -1,8 +1,12 @@
 import React from 'react'
+import Admission from '@/components/admission/Admission'
+
 
 const admissionPage = () => {
   return (
-    <div>admissionPage</div>
+    <div>
+      <Admission />
+    </div>
   )
 }
 
