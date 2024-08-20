@@ -39,14 +39,11 @@ const Home = () => {
                     ></img>
                   </picture>
 
-                  <h1 className="text-xl font-bold">The Super</h1>
-                  <p className="">Head of the Department</p>
+                  <h1 className="text-xl font-bold">প্রধান শিক্ষক</h1>
+                  <p className="">নাম: -------------</p>
                 </div>
                 <hr className="my-6 border-t-8 h-2 border-lime-400" />
 
-                <div className="flex flex-col">
-                  <Mujib />
-                </div>
                 <hr className="my-6 border-t-8 h-2 border-lime-300" />
 
                 <Dengue />
