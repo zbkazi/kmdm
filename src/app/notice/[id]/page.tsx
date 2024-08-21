@@ -1,4 +1,3 @@
-// src/app/notice/[id]/page.tsx
 "use client";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -23,9 +22,8 @@ const StyledContainer = styled(Container)({
   padding: "2rem",
 });
 
-const NoticeDetail: React.FC = () => {
-  const router = useRouter();
-  const { id } = useParams();
+const NoticeDetail: React.FC<{ params: { id: string } }> = ({ params }) => {
+  const { id } = params;
   const [notice, setNotice] = useState<Notice | null>(null);
 
   useEffect(() => {
@@ -35,7 +33,7 @@ const NoticeDetail: React.FC = () => {
         .then((response) => response.json())
         .then((data) => {
           const selectedNotice = data.find(
-            (n: Notice) => n.id === parseInt(id as string, 10)
+            (n: Notice) => n.id === parseInt(id, 10)
           );
           setNotice(selectedNotice || null);
         })
