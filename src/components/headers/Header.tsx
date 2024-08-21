@@ -81,41 +81,41 @@ const Navbar = () => {
   };
 
   const DrawerList = (
-    <Box sx={{ width: 250 }} role="presentation">
-      <Divider />
-      <div className="py-2">
-        {NavbarMenuData.map((item, index) => (
-          <div key={index} className="py-2">
-            <div
-              onClick={() => toggleMenu(index)}
-              className="cursor-pointer flex justify-between px-4 py-2 text-sm hover:bg-gray-100"
-            >
-              <Typography className="text-blue-300 block">
-                {item.title}
-              </Typography>
-              {item.sublinks ? (
-                expandedMenus[index] ? (
-                  <ExpandLessIcon />
-                ) : (
-                  <ExpandMoreIcon />
-                )
-              ) : null}
-            </div>
-            {item.sublinks && expandedMenus[index] && (
-              <div className="pl-8">
-                {item.sublinks.map((sublink, subIndex) => (
-                  <Link key={subIndex} href={sublink.href} passHref>
-                    <Typography className="text-blue-300 block px-4 py-2 text-sm hover:bg-gray-100">
-                      {sublink.title}
-                    </Typography>
-                  </Link>
-                ))}
+    <div className="flex flex-col ">
+      <Box sx={{ width: 250 }} role="presentation">
+        <Divider />
+        <div className="py-2">
+          {NavbarMenuData.map((item, index) => (
+            <div key={index} className="py-2 ">
+              <div
+                onClick={() => toggleMenu(index)}
+                className="cursor-pointer flex justify-between px-4 py-2 text-sm hover:bg-gray-400"
+              >
+                <Typography className=" block">{item.title}</Typography>
+                {item.sublinks ? (
+                  expandedMenus[index] ? (
+                    <ExpandLessIcon />
+                  ) : (
+                    <ExpandMoreIcon />
+                  )
+                ) : null}
               </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </Box>
+              {item.sublinks && expandedMenus[index] && (
+                <div className="pl-8">
+                  {item.sublinks.map((sublink, subIndex) => (
+                    <Link key={subIndex} href={sublink.href} passHref>
+                      <Typography className="cursor-pointer block px-4 py-2 text-sm hover:bg-gray-400">
+                        {sublink.title}
+                      </Typography>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </Box>
+    </div>
   );
 
   return (
@@ -147,7 +147,7 @@ const Navbar = () => {
                   </Typography>
                 </Link>
                 {item.sublinks && (
-                  <div className="absolute left-0 top-full mt-1 hidden group-hover:block bg-white shadow-lg rounded-md py-2 z-10 w-48">
+                  <div className="absolute left-0 top-full mt-1 hidden group-hover:block bg-purple-50 dark:bg-slate-800 shadow-lg rounded-md py-2 z-10 w-48">
                     {item.sublinks.map((sublink, subIndex) => (
                       <Link key={subIndex} href={sublink.href} passHref>
                         <Typography className="text-blue-300 block px-4 py-2 text-sm hover:bg-gray-100">
