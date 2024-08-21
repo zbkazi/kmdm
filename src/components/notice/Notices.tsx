@@ -27,7 +27,7 @@ const Notices: React.FC = () => {
 
   useEffect(() => {
     // Simulating fetching data
-    fetch("/notices.json")
+    fetch("https://raw.githubusercontent.com/zbkazi/kmdm/main/public/notices.json")
       .then((response) => response.json())
       .then((data: Notice[]) => setNotices(data))
       .catch((error) => console.error("Error fetching notices:", error));

@@ -13,7 +13,7 @@ const NewsEvents = () => {
   const [eventsPerPage, setEventsPerPage] = useState<number>(3);
 
   useEffect(() => {
-    fetch("/events.json")
+    fetch("https://raw.githubusercontent.com/zbkazi/kmdm/main/public/events.json")
       .then((response) => response.json())
       .then((data: NewsEvent[]) => setNewsEvents(data));
   }, []);
