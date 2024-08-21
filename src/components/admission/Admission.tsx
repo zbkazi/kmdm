@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import AdmissionForm from "./AdmissionForm";
 
 const Admission = () => {
   return (
-    <div>Admission</div>
-  )
-}
+    <div>
+      <AdmissionForm />
+    </div>
+  );
+};
 
-export default Admission
+export default Admission;

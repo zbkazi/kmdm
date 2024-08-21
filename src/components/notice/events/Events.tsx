@@ -13,7 +13,7 @@ const NewsEvents = () => {
   const [eventsPerPage, setEventsPerPage] = useState<number>(3);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("/events.json")
       .then((response) => response.json())
       .then((data: NewsEvent[]) => setNewsEvents(data));
   }, []);

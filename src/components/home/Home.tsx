@@ -44,8 +44,6 @@ const Home = () => {
                 </div>
                 <hr className="my-6 border-t-8 h-2 border-lime-400" />
 
-                <hr className="my-6 border-t-8 h-2 border-lime-300" />
-
                 <Dengue />
               </div>
               <hr className="my-6 border-t-8 h-2 border-lime-300" />

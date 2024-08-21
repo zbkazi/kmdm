@@ -51,14 +51,18 @@ const Students = () => {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4 text-center">Students</h1>
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+        <table className="min-w-full bg-gray-200 dark:bg-slate-800 shadow-md rounded-lg overflow-hidden">
           <thead>
             <tr>
-              <th className="py-2 px-4 bg-gray-200">Serial</th>
-              <th className="py-2 px-4 bg-gray-200">Class</th>
-              <th className="py-2 px-4 bg-gray-200">Session</th>
-              <th className="py-2 px-4 bg-gray-200">Group</th>
-              <th className="py-2 px-4 bg-gray-200">PDF</th>
+              <th className="py-2 px-4 bg-gray-200 dark:bg-slate-800">
+                Serial
+              </th>
+              <th className="py-2 px-4 bg-gray-200 dark:bg-slate-800">Class</th>
+              <th className="py-2 px-4 bg-gray-200 dark:bg-slate-800">
+                Session
+              </th>
+              <th className="py-2 px-4 bg-gray-200 dark:bg-slate-800">Group</th>
+              <th className="py-2 px-4 bg-gray-200 dark:bg-slate-800">PDF</th>
             </tr>
           </thead>
           <tbody>

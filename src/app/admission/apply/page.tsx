@@ -1,9 +1,11 @@
-import React from 'react'
+import Admission from "@/components/admission/Admission";
 
 function applyPage() {
   return (
-    <div>applyPage</div>
-  )
+    <div>
+      <Admission />
+    </div>
+  );
 }
 
-export default applyPage
+export default applyPage;

@@ -1,23 +1,21 @@
 import React from "react";
-import Image from "next/image";
-import Mujib_P from "@/assets/Mujib_100_Logo.svg";
-import Link from "next/link";
+
 const Mujib = () => {
   return (
-    <div>
-      <div>
-        <h1 className="text-center text-2xl font-bold hover:underline">
-          মুজিব বর্ষ{" "}
-        </h1>
-        <Link href="https://sheikhmujib.com/bn/mujib-100/">
-          <Image
-            className="mx-auto w-auto h-auto dark:bg-gray-100 border-2 border-lime-300 shadow-lg"
-            src={Mujib_P}
-            alt="Emergency Hotline"
-            width={200}
-            height={54}
-          />
-        </Link>
+    <div className="container m-auto">
+      <div className="grid grid-flow-row-dense grid-cols-3 auto-cols-auto grid-rows-3 gap-4">
+        <div className="col-span-2 bg-yellow-200">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quaerat,
+          harum ullam quo recusandae iste! Praesentium doloremque ex at iure,
+          tenetur ipsum expedita repellendus itaque sint nobis, veritatis
+          dolorum architecto!
+        </div>
+        <div className="col-span-1 bg-red-300">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quaerat,
+          harum ullam quo recusandae iste! Praesentium doloremque ex at iure,
+          tenetur ipsum expedita repellendus itaque sint nobis, veritatis
+          dolorum architecto!
+        </div>
       </div>
     </div>
   );

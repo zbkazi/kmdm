@@ -1,77 +1,92 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Container,
+  Grid,
+  Button,
+  Box,
+} from "@mui/material";
+import { styled } from "@mui/system";
 import Link from "next/link";
+import { Notice } from "@/types/notice";
 
-interface Notice {
-  _id: string;
-  title: string;
-  description: string;
-}
+// Styled Container for responsive design
+const StyledContainer = styled(Container)({
+  padding: "2rem",
+});
 
-const Notices = () => {
-  const [notices, setNotices] = useState<Notice[]>([]);
+// Pagination settings
+const ITEMS_PER_PAGE = 3;
+
+const Notices: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [noticesPerPage, setNoticesPerPage] = useState<number>(4);
-  const [totalPages, setTotalPages] = useState<number>(1);
-  const [nextLink, setNextLink] = useState<string | null>(null);
-  const [prevLink, setPrevLink] = useState<string | null>(null);
+  const [notices, setNotices] = useState<Notice[]>([]);
 
   useEffect(() => {
-    const fetchNotices = async () => {
-      const res = await fetch(
-        `/api/notices?page=${currentPage}&limit=${noticesPerPage}`
-      );
-      const data = await res.json();
-      setNotices(data.notices);
-      setTotalPages(data.totalPages);
-      setNextLink(data.nextLink);
-      setPrevLink(data.prevLink);
-    };
+    // Simulating fetching data
+    fetch("/notices.json")
+      .then((response) => response.json())
+      .then((data: Notice[]) => setNotices(data))
+      .catch((error) => console.error("Error fetching notices:", error));
+  }, []);
 
-    fetchNotices();
-  }, [currentPage, noticesPerPage]);
+  const totalPages = Math.ceil(notices.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentNotices = notices.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const handlePageChange = (direction: "next" | "prev") => {
+    if (direction === "next" && currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    } else if (direction === "prev" && currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   return (
-    <div className="rounded-md shadow-md">
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl mt-5 font-extrabold">Notices</h1>
-        <div className="grid grid-cols-1">
-          {notices.map((notice) => (
-            <div key={notice._id} className="">
-              <Link href={`/notices/${notice._id}`}>
-                <p className="text-lg hover:underline hover:uppercase font-light">
-                  {notice.title}
-                </p>
-              </Link>
-              <p>{notice.description}</p>
-              <br />
-            </div>
-          ))}
-        </div>
-        <div className="mt-4">
-          {prevLink && (
-            <button
-              className="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded mr-2"
-              onClick={() => paginate(currentPage - 1)}
-              disabled={currentPage === 1}
-            >
-              Previous
-            </button>
-          )}
-          {nextLink && (
-            <button
-              className="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded"
-              onClick={() => paginate(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            >
-              Next
-            </button>
-          )}
-        </div>
-      </div>
-    </div>
+    <StyledContainer maxWidth="md">
+      <Typography variant="h4" component="h1" className="mb-6 text-center">
+        Notices
+      </Typography>
+      <Grid container spacing={3}>
+        {currentNotices.map((notice) => (
+          <Grid item xs={12} md={6} lg={4} key={notice.id}>
+            <Link href={`/notice/${notice.id}`} passHref>
+              <p className="text-blue-500 hover:underline">{notice.title}</p>
+            </Link>
+
+            {notice.body
+              ? notice.body.length > 40
+                ? `${notice.body.substring(0, 40)}....`
+                : notice.body
+              : "No description available"}
+          </Grid>
+        ))}
+      </Grid>
+      <Box display="flex" justifyContent="space-between" mt={4}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => handlePageChange("prev")}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => handlePageChange("next")}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </Button>
+      </Box>
+      <Typography variant="body2" align="center" mt={2}>
+        Page {currentPage} of {totalPages}
+      </Typography>
+    </StyledContainer>
   );
 };
 
