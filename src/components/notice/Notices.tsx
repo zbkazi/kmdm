@@ -58,8 +58,8 @@ const Notices: React.FC = () => {
             </Link>
 
             {notice.body
-              ? notice.body.length > 40
-                ? `${notice.body.substring(0, 40)}....`
+              ? notice.body.length > 100
+                ? `${notice.body.substring(0, 100)}....`
                 : notice.body
               : "No description available"}
           </Grid>
